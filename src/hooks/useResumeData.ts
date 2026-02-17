@@ -7,7 +7,7 @@ export function useResumeData() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/Jim_Resume_Website/src/data/resume.json')
+    fetch('/Jim_Resume_Website/resume.json')
       .then((res) => res.json())
       .then((json) => {
         const parsed = ResumeSchema.safeParse(json);

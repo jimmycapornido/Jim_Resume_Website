@@ -7,7 +7,7 @@ export function useSiteData() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/Jim_Resume_Website/src/data/site.json')
+    fetch('/Jim_Resume_Website/site.json')
       .then((res) => res.json())
       .then((json) => {
         const parsed = SiteSchema.safeParse(json);
