@@ -1,0 +1,94 @@
+{
+  "brand": "Jimmy Ornido – Medical VA",
+  "navLinks": [
+    { "label": "Overview", "href": "#hero" },
+    { "label": "Services", "href": "#services" },
+    { "label": "Proof", "href": "#proof" },
+    { "label": "Experience", "href": "#experience" },
+    { "label": "Certifications", "href": "#certifications" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "ctaNav": "Hire Me",
+  "ctaHeroPrimary": "Request a Call",
+  "ctaHeroSecondary": "Email Me",
+  "trustStrip": ["ClinicalWorks", "SharePoint", "Salesforce", "Secure Transmission", "HIPAA Compliant"],
+  "profileCard": {
+    "title": "Medical VA | EHR & Records",
+    "availability": "Part-time / Remote",
+    "metrics": [
+      { "label": "500+ records/month" },
+      { "label": "100% accuracy target" },
+      { "label": "0 compliance issues (12 months)" },
+      { "label": "20% faster processing" }
+    ]
+  },
+  "services": [
+    {
+      "title": "EHR & PCE Documentation",
+      "description": "Accurate entry and management of patient care encounters in EHR systems.",
+      "outcomes": ["Audit-ready records", "Reduced charting errors"]
+    },
+    {
+      "title": "Medical Records Organization & Bundling",
+      "description": "Systematic organization and bundling of medical records for efficient retrieval.",
+      "outcomes": ["Faster access", "Improved compliance"]
+    },
+    {
+      "title": "Medical Transcription Support",
+      "description": "Assist with transcription of medical notes and reports.",
+      "outcomes": ["Accurate documentation", "Time savings"]
+    },
+    {
+      "title": "Coding Support (basic/assistive)",
+      "description": "Support for basic medical coding and documentation.",
+      "outcomes": ["Fewer coding errors", "Faster billing"]
+    },
+    {
+      "title": "Workflow Tracking (Salesforce/Sheets/SharePoint)",
+      "description": "Track and update workflows using digital tools.",
+      "outcomes": ["Better task visibility", "On-time completion"]
+    },
+    {
+      "title": "Audit-Ready Compliance Documentation",
+      "description": "Maintain documentation to meet compliance and audit standards.",
+      "outcomes": ["Zero compliance issues", "Peace of mind"]
+    }
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Intake",
+      "description": "Tools, access, and SOP setup"
+    },
+    {
+      "step": 2,
+      "title": "Daily Execution",
+      "description": "Records processed, logs updated"
+    },
+    {
+      "step": 3,
+      "title": "QA + Reporting",
+      "description": "Accuracy checks, audit readiness"
+    }
+  ],
+  "proofMetrics": [
+    { "label": "500+ patient records/month with accuracy" },
+    { "label": "20% reduced processing time" },
+    { "label": "Zero compliance issues over 12 months" },
+    { "label": "Reduced charting errors by 15% (hospital role)" },
+    { "label": "20+ patients/day assisted (hospital role)" }
+  ],
+  "skillsLabel": "Core Skills",
+  "toolsLabel": "Technical Tools",
+  "contact": {
+    "headline": "Tell me what you need help with.",
+    "responseSLA": "Replies within 24 hours",
+    "consentText": "I agree to be contacted"
+  },
+  "footer": {
+    "copyright": "Jimmy C. Ornido – Medical Virtual Assistant",
+    "role": "Medical VA",
+    "year": 2026,
+    "backToTop": "Back to top"
+  }
+}
