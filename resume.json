@@ -1,0 +1,97 @@
+{
+	"name": "Jimmy C. Ornido",
+	"location": "Cebu City, Philippines",
+	"phone": "0945-390-2911",
+	"email": "jimmy.cap.ornido@gmail.com",
+	"dateOfBirth": "1998-06-09",
+	"professionalSummary": "Healthcare professional with 2+ years hospital experience and 8+ months as a Medical Virtual Assistant. Skilled in EHR management, medical transcription, coding, and workflow optimization. Proficient in SharePoint, CharSwap, Salesforce, and other digital tools. Experienced in managing high volumes of sensitive patient records while maintaining HIPAA compliance. Known for accuracy, organization, and adaptability in clinical and administrative settings.",
+	"coreSkills": [
+		"EHR management & Patient Care Encounter documentation",
+		"Medical transcription & coding",
+		"Organizing, bundling, and managing medical records",
+		"HIPAA compliance & audit-ready documentation",
+		"Workflow optimization with SharePoint & CharSwap",
+		"Time management, prioritization, and accuracy",
+		"Coordination with healthcare providers",
+		"Attention to detail & consistency"
+	],
+	"technicalTools": [
+		"ClinicalWorks (EHR)",
+		"Salesforce",
+		"SharePoint",
+		"CharSwap",
+		"Google Sheets & Docs",
+		"Microsoft Word & Excel",
+		"PDF tools",
+		"Secure email/document transmission"
+	],
+	"experience": [
+		{
+			"role": "Medical Virtual Assistant (Part-Time)",
+			"company": "Momentum Spine",
+			"date": "2024 – Present",
+			"achievements": [
+				"Logged & managed 500+ patient records/month with 100% accuracy",
+				"Reduced document processing time by 20% using SharePoint & CharSwap",
+				"Maintained audit-ready EHR documentation with zero compliance issues over 12 months",
+				"Generated accurate Patient Care Encounters (PCE)",
+				"Reviewed & verified medical records for accuracy",
+				"Organized and managed medical documentation for efficient retrieval",
+				"Tracked workflows, tasks, and records with Salesforce, Google Sheets & SharePoint"
+			]
+		},
+		{
+			"role": "Nursing Assistant",
+			"company": "Cebu Doctors’ University Hospital",
+			"date": "Oct 2022 – Mar 2025",
+			"achievements": [
+				"Assisted 20+ patients daily with direct care, mobility, hygiene, & daily activities",
+				"Maintained 100% accuracy in EHR updates over 2+ years",
+				"Monitored & documented vital signs; managed patient drains & I&O tracking",
+				"Supported nursing team in reducing charting errors by 15%",
+				"Maintained clean, safe, & organized patient care areas"
+			]
+		}
+	],
+	"education": [
+		{
+			"degree": "Diploma in Midwifery & Nursing Assistant",
+			"institution": "Saint Paul College Foundation, Inc.",
+			"date": "2015 – 2018"
+		},
+		{
+			"degree": "Nursing Assistant Program",
+			"institution": "University of Cebu",
+			"date": "2020 – 2022"
+		}
+	],
+	"certifications": [
+		{
+			"title": "Ambulance Training",
+			"issuer": "Cebu Doctors’ University Hospital",
+			"date": "Dec 2023"
+		},
+		{
+			"title": "Radiation Safety Refresher Course",
+			"issuer": "Cebu Doctors’ University Hospital",
+			"date": "Sep 2023"
+		},
+		{
+			"title": "Medical Transcription Training",
+			"issuer": "Clair Voyance",
+			"date": "Jan 2026",
+			"code": "CVMV-VA105855"
+		},
+		{
+			"title": "Medical Coding Training",
+			"issuer": "Clair Voyance",
+			"date": "Jan 2026"
+		},
+		{
+			"title": "Medical Virtual Assistant Training",
+			"issuer": "Clair Voyance",
+			"date": "Jan 2026",
+			"code": "CVMV-VA105855"
+		}
+	]
+}
