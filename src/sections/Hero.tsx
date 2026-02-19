@@ -20,7 +20,10 @@ export const Hero: React.FC<{ site: Site; resume: Resume }> = ({ site, resume })
       <div className="flex flex-col items-center max-w-5xl gap-12 px-4 mx-auto md:flex-row">
         {/* LEFT */}
         <div className="flex-1">
-          <h1 className="mb-6 font-bold text-h1 text-text-primary dark:text-slate-50">Medical Virtual Assistant for Accurate, HIPAA-Compliant Documentation</h1>
+          <h1 className="mb-6 font-bold text-h1 text-text-primary dark:text-slate-50">
+  Medical Virtual Assistant | EHR Management • Documentation • Workflow Support
+</h1>
+
           <p className="mb-6 text-base leading-relaxed text-text-secondary dark:text-slate-300">Speed, accuracy, and compliance for your clinic's documentation and records.</p>
           <div className="flex flex-col gap-4 mb-6 sm:flex-row">
             <Button variant="primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>{site.ctaHeroPrimary}</Button>
