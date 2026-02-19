@@ -18,7 +18,10 @@ export const Services: React.FC<{ site: Site }> = ({ site }) => {
       }`}
     >
       <div className="max-w-5xl mx-auto px-4">
-        <SectionHeading>What I Do</SectionHeading>
+        <SectionHeading>
+  Core Services
+</SectionHeading>
+
         <div className="grid md:grid-cols-3 gap-8">
           {site.services.map((service, i) => (
             <div
