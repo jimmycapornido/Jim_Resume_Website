@@ -7,6 +7,7 @@ import { ErrorPanel } from './components/ui/ErrorPanel';
 import { ThemeProvider } from './components/ui/ThemeProvider';
 import { Nav } from './sections/Nav';
 import { Hero } from './sections/Hero';
+import { About } from './sections/About'; // ✅ Added
 import { Services } from './sections/Services';
 import { Process } from './sections/Process';
 import { Proof } from './sections/Proof';
@@ -31,6 +32,7 @@ const App: React.FC = () => {
         <Nav site={site} />
         <main>
           <Hero site={site} resume={resume} />
+          <About /> {/* ✅ Inserted here */}
           <Services site={site} />
           <Process site={site} />
           <Proof site={site} />
