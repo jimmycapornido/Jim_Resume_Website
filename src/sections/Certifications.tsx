@@ -1,37 +1,111 @@
-import React from 'react';
-import { Resume } from '../types/resume';
+import React, { useState } from 'react';
 import { SectionHeading } from '../components/ui/SectionHeading';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-export const Certifications: React.FC<{ resume: Resume }> = ({ resume }) => {
-  const { elementRef, isVisible } = useScrollAnimation();
+export const Certifications: React.FC<{ resume: any }> = ({ resume }) => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section
-      id="certifications"
-      ref={elementRef}
-      className={`py-16 bg-surface dark:bg-slate-900 transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
-    >
+    <section id="certifications" className="py-16 bg-white dark:bg-slate-900">
       <div className="max-w-5xl mx-auto px-4">
         <SectionHeading>Certifications & Training</SectionHeading>
-        <div className="grid md:grid-cols-2 gap-7">
-          {resume.certifications.map((cert, i) => (
-            <div
-              key={i}
-              className={`bg-white dark:bg-slate-800 border border-border dark:border-slate-700 rounded-xl shadow-sm p-6 flex flex-col transition-all duration-700 hover:shadow-md ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-              style={{ transitionDelay: isVisible ? `${i * 75}ms` : '0ms' }}
+
+        <div className="grid md:grid-cols-2 gap-6 mt-10">
+
+          {/* Medical Transcription */}
+          <div className="bg-white dark:bg-slate-800 rounded-xl border border-border dark:border-slate-700 p-5 shadow-sm">
+            <h3 className="font-semibold text-lg text-text-primary dark:text-slate-100">
+              Medical Transcription Training
+            </h3>
+            <p className="text-sm text-text-secondary dark:text-slate-300">
+              Clair Voyance • Jan 2026
+            </p>
+
+            <button
+              type="button"
+              className="mt-4 w-full"
+              onClick={() => setSelectedImage('/medical-transcription.jpg')}
             >
-              <div className="font-semibold text-base text-text-primary dark:text-slate-100 mb-2">{cert.title}</div>
-              <div className="text-text-secondary dark:text-slate-400 text-sm mb-2">{cert.issuer}</div>
-              <div className="text-text-muted dark:text-slate-500 text-xs mb-1">{cert.date}</div>
-              {cert.code && <div className="text-xs text-text-muted dark:text-slate-500">Code: {cert.code}</div>}
-            </div>
-          ))}
+              <img
+                src="/medical-transcription.jpg"
+                alt="Medical Transcription Certificate"
+                className="rounded-lg w-full hover:opacity-90 transition"
+              />
+            </button>
+            <p className="mt-2 text-xs text-text-muted dark:text-slate-400">
+              Click to enlarge
+            </p>
+          </div>
+
+          {/* Medical Coding */}
+          <div className="bg-white dark:bg-slate-800 rounded-xl border border-border dark:border-slate-700 p-5 shadow-sm">
+            <h3 className="font-semibold text-lg text-text-primary dark:text-slate-100">
+              Medical Coding Training
+            </h3>
+            <p className="text-sm text-text-secondary dark:text-slate-300">
+              Clair Voyance • Jan 2026
+            </p>
+
+            <button
+              type="button"
+              className="mt-4 w-full"
+              onClick={() => setSelectedImage('/medical-coding.jpg')}
+            >
+              <img
+                src="/medical-coding.jpg"
+                alt="Medical Coding Certificate"
+                className="rounded-lg w-full hover:opacity-90 transition"
+              />
+            </button>
+            <p className="mt-2 text-xs text-text-muted dark:text-slate-400">
+              Click to enlarge
+            </p>
+          </div>
+
+          {/* Medical VA */}
+          <div className="bg-white dark:bg-slate-800 rounded-xl border border-border dark:border-slate-700 p-5 shadow-sm">
+            <h3 className="font-semibold text-lg text-text-primary dark:text-slate-100">
+              Medical Virtual Assistant Training
+            </h3>
+            <p className="text-sm text-text-secondary dark:text-slate-300">
+              Clair Voyance • Jan 2026
+            </p>
+
+            <button
+              type="button"
+              className="mt-4 w-full"
+              onClick={() => setSelectedImage('/medical-va.jpg')}
+            >
+              <img
+                src="/medical-va.jpg"
+                alt="Medical Virtual Assistant Certificate"
+                className="rounded-lg w-full hover:opacity-90 transition"
+              />
+            </button>
+            <p className="mt-2 text-xs text-text-muted dark:text-slate-400">
+              Click to enlarge
+            </p>
+          </div>
+
         </div>
+
+        {/* Modal Preview */}
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-6"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="max-w-5xl w-full">
+              <img
+                src={selectedImage}
+                alt="Certificate Preview"
+                className="max-h-[90vh] w-full object-contain rounded-xl shadow-2xl bg-white"
+              />
+              <p className="mt-3 text-center text-xs text-white/80">
+                Click anywhere to close
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
