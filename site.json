@@ -54,6 +54,15 @@
 			"outcomes": ["Zero compliance issues", "Peace of mind"]
 		}
 	],
+	"testimonial": {
+		"quote": "Jimmy has been a dependable part of our documentation workflow. He handles Patient Care Encounters and medical records with a high level of accuracy and organization. His attention to detail helps us maintain clean and audit-ready charts.",
+		"author": "Clinic Documentation Team",
+		"imagePath": "/Jim_Resume_Website/testimonial-photo.jpg"
+	},
+	"companies": [
+		{ "name": "Cebu Doctors' University Hospital", "logoPath": "/Jim_Resume_Website/logo-cebu.jpg" },
+		{ "name": "Momentum Spine & Joint", "logoPath": "/Jim_Resume_Website/logo-momentum.jpg" }
+	],
 	"process": [
 		{
 			"step": 1,
