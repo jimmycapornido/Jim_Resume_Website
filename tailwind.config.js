@@ -7,19 +7,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1e40af', // Medical soft blue (darker, trustworthy)
-        accent: '#0369a1', // Medical teal-blue (accent use only)
-        clinical: '#fafbfc', // Off-white background
-        surface: '#f5f7fa', // Light gray for cards
-        border: '#e0e5eb', // Subtle border gray
+        primary: '#2563eb', // Brighter blue
+        accent: '#06b6d4', // Vibrant cyan accent
+        clinical: '#f8fafc', // Slightly lighter off-white
+        surface: '#f1f5f9', // Softer card background
+        border: '#e2e8f0', // Lighter border
         text: {
-          primary: '#1f2937', // Dark neutral gray
-          secondary: '#6b7280', // Muted gray
-          muted: '#9ca3af', // Light gray text
+          primary: '#0f172a', // Deeper neutral
+          secondary: '#64748b', // Modern muted
+          muted: '#94a3b8', // Lighter muted
         },
+        highlight: '#fbbf24', // Gold for highlights
+        error: '#ef4444',
+        success: '#22c55e',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'ui-sans-serif', 'system-ui'],
       },
       fontSize: {
         'hero': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],

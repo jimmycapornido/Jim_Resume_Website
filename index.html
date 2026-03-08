@@ -6,13 +6,14 @@
     <meta name="description" content="Medical Virtual Assistant for Accurate, HIPAA-Compliant Documentation. Jimmy Ornido – Medical VA." />
     <title>Jimmy Ornido – Medical Virtual Assistant</title>
 
-    <!-- Premium Clean Font -->
+    <!-- Preload Premium Clean Font for performance -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="bg-clinical dark:bg-slate-900 text-text-primary dark:text-slate-100 font-sans">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" async></script>
   </body>
 </html>

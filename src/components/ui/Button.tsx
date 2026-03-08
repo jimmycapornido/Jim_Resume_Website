@@ -6,7 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<ButtonProps> = ({ variant = 'primary', children, className = '', ...props }) => {
-  let base = 'px-6 py-2.5 rounded-lg font-semibold focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition';
+  let base = 'px-6 py-2.5 rounded-lg font-semibold focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition duration-200 ease-in-out transform hover:scale-[1.04] hover:shadow-lg active:scale-95';
   let color = '';
   if (variant === 'primary') color = 'bg-primary text-white hover:bg-[#153099] shadow-sm';
   else if (variant === 'secondary') color = 'bg-accent text-white hover:bg-[#0355a1] shadow-sm';

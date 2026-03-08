@@ -31,6 +31,7 @@ export const Hero: React.FC<{ site: Site; resume: Resume }> = ({ site, resume })
           <div className="flex flex-col gap-4 mb-6 sm:flex-row">
             <Button
               variant="primary"
+              aria-label="Scroll to contact section"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {site.ctaHeroPrimary}
@@ -39,6 +40,7 @@ export const Hero: React.FC<{ site: Site; resume: Resume }> = ({ site, resume })
             <a
               href={`mailto:${resume.email}`}
               className="px-4 py-2 transition-colors border rounded-md border-border text-text-primary hover:bg-surface dark:text-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
+              aria-label={`Send email to ${resume.email}`}
             >
               {site.ctaHeroSecondary}
             </a>
@@ -60,8 +62,9 @@ export const Hero: React.FC<{ site: Site; resume: Resume }> = ({ site, resume })
         <div className="flex flex-col items-center flex-1 w-full max-w-xs p-8 bg-white border shadow-sm dark:bg-slate-800 rounded-xl border-border dark:border-slate-700">
           <img
             src={JimProfile}
-            alt="Jimmy C. Ornido profile photo"
+            alt="Profile photo of Jimmy C. Ornido, Medical Virtual Assistant"
             className="object-cover mb-4 border border-gray-200 rounded-full w-28 h-28 dark:border-slate-700 bg-surface dark:bg-slate-700"
+            aria-label="Profile photo of Jimmy C. Ornido"
           />
 
           <div className="mb-1 text-lg font-semibold text-center text-text-primary dark:text-slate-100">
@@ -77,16 +80,18 @@ export const Hero: React.FC<{ site: Site; resume: Resume }> = ({ site, resume })
             <a
               href={`tel:${resume.phone}`}
               className="flex items-center gap-3 text-sm font-medium transition text-text-primary dark:text-slate-100 hover:text-primary dark:hover:text-accent"
+              aria-label={`Call ${resume.phone}`}
             >
-              <span className="flex-shrink-0 text-lg">📞</span>
+              <span className="flex-shrink-0 text-lg" aria-hidden="true">📞</span>
               <span className="break-all">{resume.phone}</span>
             </a>
 
             <a
               href={`mailto:${resume.email}`}
               className="flex items-center gap-3 text-sm font-medium transition text-text-primary dark:text-slate-100 hover:text-primary dark:hover:text-accent"
+              aria-label={`Send email to ${resume.email}`}
             >
-              <span className="flex-shrink-0 text-lg">✉️</span>
+              <span className="flex-shrink-0 text-lg" aria-hidden="true">✉️</span>
               <span className="text-xs break-all">{resume.email}</span>
             </a>
           </div>

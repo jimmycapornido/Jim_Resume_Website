@@ -14,6 +14,7 @@ export function useSiteData() {
         if (parsed.success) {
           setData(parsed.data);
         } else {
+          console.error("Zod parse error:", parsed.error);
           setError('Site data is invalid. Please check JSON format.');
         }
         setLoading(false);

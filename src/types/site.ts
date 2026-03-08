@@ -40,6 +40,17 @@ export const SiteFooterSchema = z.object({
   backToTop: z.string(),
 });
 
+export const TestimonialSchema = z.object({
+  quote: z.string(),
+  author: z.string(),
+  imagePath: z.string(),
+});
+
+export const CompanyLogoSchema = z.object({
+  name: z.string(),
+  logoPath: z.string(),
+});
+
 export const SiteSchema = z.object({
   brand: z.string(),
   navLinks: z.array(SiteNavLinkSchema),
@@ -51,6 +62,8 @@ export const SiteSchema = z.object({
   services: z.array(SiteServiceSchema),
   process: z.array(SiteProcessStepSchema),
   proofMetrics: z.array(SiteMetricSchema),
+  testimonial: TestimonialSchema.optional(),
+  companies: z.array(CompanyLogoSchema).optional(),
   skillsLabel: z.string(),
   toolsLabel: z.string(),
   contact: SiteContactSchema,
