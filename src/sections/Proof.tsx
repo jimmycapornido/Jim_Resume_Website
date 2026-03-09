@@ -39,17 +39,13 @@ export const Proof: React.FC<{ site: Site }> = ({ site }) => {
                 — {site.testimonial.author}
               </cite>
             </div>
-            <div 
-              className="w-full md:w-1/2 min-h-[300px] md:min-h-[450px]"
-              style={{
-                backgroundImage: `url(${site.testimonial.imagePath})`,
-                backgroundPosition: '100% 50%', // align exactly right
-                backgroundSize: '250%',         // aggressively zoom in so the left-side text is out of bounds
-                backgroundRepeat: 'no-repeat'
-              }}
-              role="img"
-              aria-label="Jimmy orchestrating medical documentation"
-            />
+            <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[400px]">
+              <img 
+                src={site.testimonial.imagePath} 
+                alt="Jimmy orchestrating medical documentation"
+                className="block object-cover w-full h-full [mask-image:linear-gradient(to_bottom,transparent,black_15%)] md:[mask-image:linear-gradient(to_right,transparent,black_20%)]"
+              />
+            </div>
           </div>
         )}
 
