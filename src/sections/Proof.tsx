@@ -9,7 +9,7 @@ export const Proof: React.FC<{ site: Site }> = ({ site }) => {
 
   return (
     <section
-      id="portfolio"
+      id="proof"
       ref={elementRef}
       className={`py-16 bg-white dark:bg-slate-900 transition-all duration-700 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
