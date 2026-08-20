@@ -13,7 +13,7 @@ export const Hero: React.FC<{ site: Site }> = ({ site }) => {
     <section
       id="hero"
       ref={elementRef as React.RefObject<HTMLElement>}
-      className="relative overflow-hidden bg-navy-deep min-h-[92vh] flex items-center"
+      className="relative overflow-hidden bg-navy-deep min-h-screen min-h-[100svh] flex items-center"
     >
       <div className="absolute inset-0">
         <img
@@ -26,15 +26,15 @@ export const Hero: React.FC<{ site: Site }> = ({ site }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent" />
       </div>
 
-      <Container className={`relative py-28 md:py-0 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+      <Container className={`relative pt-28 md:pt-32 pb-14 md:pb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
         <div className="max-w-2xl">
           <span className="block text-eyebrow font-semibold uppercase text-accent">{site.hero.eyebrow}</span>
-          <h1 className="mt-5 text-hero font-extrabold tracking-tight text-white">{site.hero.headline}</h1>
-          <p className="mt-6 text-base md:text-lg leading-relaxed text-clinical-light/90 max-w-xl">
+          <h1 className="mt-4 text-hero font-extrabold tracking-tight text-white">{site.hero.headline}</h1>
+          <p className="mt-5 text-base md:text-lg leading-relaxed text-clinical-light/90 max-w-xl">
             {site.hero.subcopy}
           </p>
 
-          <div className="mt-9 flex flex-col sm:flex-row gap-4">
+          <div className="mt-7 flex flex-col sm:flex-row gap-4">
             <Button
               variant="secondary"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -49,7 +49,7 @@ export const Hero: React.FC<{ site: Site }> = ({ site }) => {
             </Button>
           </div>
 
-          <div className="mt-14 grid grid-cols-3 gap-6 max-w-lg border-t border-white/15 pt-8">
+          <div className="mt-10 grid grid-cols-3 gap-6 max-w-lg border-t border-white/15 pt-6">
             {site.hero.proofPoints.map((p) => (
               <Metric key={p.label} value={p.value} label={p.label} tone="inverted" />
             ))}

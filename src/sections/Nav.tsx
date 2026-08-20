@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import logo from '../assets/img/jimmy-ornido-logo.webp';
 import { Button } from '../components/ui/Button';
-import { Container } from '../components/layout/Container';
 import { Site } from '../types/site';
 
 export const Nav: React.FC<{ site: Site }> = ({ site }) => {
@@ -29,16 +29,13 @@ export const Nav: React.FC<{ site: Site }> = ({ site }) => {
 
   return (
     <nav
-      className={`sticky top-0 z-40 transition-colors duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-sm border-b border-border shadow-sm' : 'bg-white/0 border-b border-transparent'
+      className={`fixed top-4 md:top-6 inset-x-4 md:inset-x-8 z-50 rounded-2xl bg-white/90 backdrop-blur-md border border-border/60 transition-shadow duration-300 ${
+        scrolled ? 'shadow-lg' : 'shadow-md'
       }`}
     >
-      <Container className="flex items-center justify-between py-4">
-        <a href="#hero" className="leading-tight hover:opacity-80 transition">
-          <span className="block font-extrabold text-lg text-navy tracking-tight">{site.brand}</span>
-          {site.brandSecondary && (
-            <span className="block text-xs font-medium text-text-muted">{site.brandSecondary}</span>
-          )}
+      <div className="flex items-center justify-between max-w-edit mx-auto px-4 md:px-6 py-2.5">
+        <a href="#hero" className="hover:opacity-80 transition" onClick={() => handleNavClick('#hero')}>
+          <img src={logo} alt={`${site.brand} – ${site.brandSecondary ?? 'Medical Virtual Assistant'}`} className="h-9 md:h-10 w-auto" />
         </a>
 
         <div className="hidden md:flex gap-8 items-center">
@@ -68,10 +65,10 @@ export const Nav: React.FC<{ site: Site }> = ({ site }) => {
         >
           <span className="text-2xl leading-none">{open ? '×' : '☰'}</span>
         </button>
-      </Container>
+      </div>
 
       {open && (
-        <div className="md:hidden bg-white border-t border-border px-6 pb-6">
+        <div className="md:hidden bg-white border-t border-border rounded-b-2xl px-6 pb-6">
           {site.navLinks.map((link) => (
             <a
               key={link.href}

@@ -19,6 +19,8 @@ const jobs = [
   // Safe tool marketing splash screens (no PHI - public login/marketing pages)
   ['eclinicalworkstools.png', 'tool-eclinicalworks.webp', 1400, 80],
   ['toolschartswap.png', 'tool-chartswap.webp', 1400, 80],
+  // Brand logo (nav lockup)
+  ['jimmy-ornido-logo.png', 'jimmy-ornido-logo.webp', 480, 90],
 ];
 
 for (const [inFile, outFile, maxWidth, quality] of jobs) {
@@ -31,16 +33,6 @@ for (const [inFile, outFile, maxWidth, quality] of jobs) {
   await img.resize({ width, withoutEnlargement: true }).webp({ quality }).toFile(outPath);
   const after = statSync(outPath).size;
   console.log(`${inFile} (${(before / 1024).toFixed(0)}KB) -> ${outFile} (${(after / 1024).toFixed(0)}KB) @ w=${width}`);
-}
-
-// Testimonial portrait lives in public/
-const pubIn = path.join(ROOT, 'public/testimonial-photo.jpg');
-const pubOut = path.join(ROOT, 'public/testimonial-photo.webp');
-{
-  const before = statSync(pubIn).size;
-  await sharp(pubIn).resize({ width: 1000, withoutEnlargement: true }).webp({ quality: 82 }).toFile(pubOut);
-  const after = statSync(pubOut).size;
-  console.log(`testimonial-photo.jpg (${(before / 1024).toFixed(0)}KB) -> testimonial-photo.webp (${(after / 1024).toFixed(0)}KB)`);
 }
 
 console.log('Done.');

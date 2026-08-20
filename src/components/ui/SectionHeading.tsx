@@ -9,7 +9,7 @@ export const SectionHeading: React.FC<{
 }> = ({ id, icon, tone = 'default', className = '', children }) => (
   <h2
     id={id}
-    className={`text-h2 font-extrabold flex items-center gap-3 tracking-tight scroll-mt-40 md:scroll-mt-56 ${
+    className={`text-h2 font-extrabold flex items-center gap-3 tracking-tight ${
       tone === 'inverted' ? 'text-white' : 'text-navy'
     } ${className}`}
   >
