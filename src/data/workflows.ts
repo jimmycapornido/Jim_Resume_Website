@@ -1,10 +1,14 @@
 import { WorkflowItem } from '../types/workflow';
+import toolChartSwap from '../assets/img/tool-chartswap.webp';
+import toolEclinicalWorks from '../assets/img/tool-eclinicalworks.webp';
 
 // Note on visuals: the raw screenshots behind this experience contain real patient
 // names, DOBs, addresses, and law-firm/requestor details that could not be reliably
 // or consistently redacted (see project privacy review). Rather than publish edited
-// screenshots, each workflow below is represented with typography and a step diagram
-// instead of an image, so no real record data is ever rendered on this page.
+// screenshots, most workflows below are represented with typography and a step
+// diagram instead of an image, so no real record data is ever rendered on this page.
+// The two exceptions (below) are each platform's own public login/marketing screen,
+// which contains no patient data at all.
 export const workflows: WorkflowItem[] = [
   {
     id: 'chartswap-release',
@@ -23,6 +27,8 @@ export const workflows: WorkflowItem[] = [
       'A more organized, consistently tracked record-request queue',
       'Fewer requests left in limbo waiting on a follow-up',
     ],
+    image: toolChartSwap,
+    imageAlt: "ChartSwap's login screen — the medical-record request and release platform used in this workflow",
     featured: false,
   },
   {
@@ -42,6 +48,8 @@ export const workflows: WorkflowItem[] = [
       'Charts that are consistently organized and up to date',
       'Less routine EHR upkeep landing on clinical staff',
     ],
+    image: toolEclinicalWorks,
+    imageAlt: 'eClinicalWorks’ login screen — the EHR platform used in this workflow',
     featured: false,
   },
   {

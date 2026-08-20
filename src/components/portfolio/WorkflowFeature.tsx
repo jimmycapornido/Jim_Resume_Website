@@ -18,24 +18,37 @@ const FlowDiagram: React.FC<{ steps: string[] }> = ({ steps }) => (
   </ol>
 );
 
-const VisualPanel: React.FC<{ item: WorkflowItem }> = ({ item }) => (
-  <div className="w-full h-full min-h-[280px] md:min-h-[360px] rounded-2xl bg-navy p-8 md:p-10 flex flex-col justify-between">
-    {item.flowSteps ? (
-      <FlowDiagram steps={item.flowSteps} />
-    ) : (
-      <>
-        <span className="text-white/30 text-7xl md:text-8xl font-extrabold leading-none">{item.number}</span>
-        <div className="mt-6">
-          {item.tools.map((tool) => (
-            <div key={tool} className="text-white font-semibold text-lg md:text-xl">
-              {tool}
-            </div>
-          ))}
-        </div>
-      </>
-    )}
-  </div>
-);
+const VisualPanel: React.FC<{ item: WorkflowItem }> = ({ item }) => {
+  if (item.image) {
+    return (
+      <div className="w-full h-full min-h-[280px] md:min-h-[360px] rounded-2xl bg-navy overflow-hidden relative">
+        <img src={item.image} alt={item.imageAlt ?? ''} className="w-full h-full object-cover" loading="lazy" />
+        <span className="absolute bottom-3 right-3 text-[10px] font-semibold uppercase tracking-wide text-white/80 bg-navy-deep/80 backdrop-blur-sm rounded-full px-3 py-1">
+          Platform login screen — no patient data
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full h-full min-h-[280px] md:min-h-[360px] rounded-2xl bg-navy p-8 md:p-10 flex flex-col justify-between">
+      {item.flowSteps ? (
+        <FlowDiagram steps={item.flowSteps} />
+      ) : (
+        <>
+          <span className="text-white/30 text-7xl md:text-8xl font-extrabold leading-none">{item.number}</span>
+          <div className="mt-6">
+            {item.tools.map((tool) => (
+              <div key={tool} className="text-white font-semibold text-lg md:text-xl">
+                {tool}
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
 
 export const WorkflowFeature: React.FC<{ item: WorkflowItem; reverse?: boolean }> = ({ item, reverse = false }) => (
   <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center py-14 md:py-20 border-b border-border last:border-b-0">
