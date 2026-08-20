@@ -3,3 +3,17 @@ dist
 .env
 .DS_Store
 *.log
+
+# Raw workflow screenshots that were never sanitized for publication (contain real
+# patient/requestor PHI - see engineering report). Do not remove these lines without
+# first re-reviewing the referenced files for exposed patient data.
+src/assets/img/chartswaplogpatientinfo.webp
+src/assets/img/ecwchartswapsendingoutcomplete.webp
+src/assets/img/ecwptdata.webp
+src/assets/img/ecwptincounters.webp
+src/assets/img/ecwsplogging.webp
+src/assets/img/folderfinalreviewbundling.webp
+src/assets/img/generatingpce.webp
+src/assets/img/salesforceupadatedlawfirm.webp
+src/assets/img/sendingoutthruemail.webp
+src/assets/img/ehr-bg.jpg

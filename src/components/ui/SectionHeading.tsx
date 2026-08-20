@@ -3,11 +3,15 @@ import React from 'react';
 export const SectionHeading: React.FC<{
   id?: string;
   icon?: React.ReactNode;
+  tone?: 'default' | 'inverted';
+  className?: string;
   children: React.ReactNode;
-}> = ({ id, icon, children }) => (
+}> = ({ id, icon, tone = 'default', className = '', children }) => (
   <h2
     id={id}
-    className="text-h2 font-bold mb-8 flex items-center gap-3 text-text-primary dark:text-slate-100 tracking-tight scroll-mt-40 md:scroll-mt-56"
+    className={`text-h2 font-extrabold flex items-center gap-3 tracking-tight scroll-mt-40 md:scroll-mt-56 ${
+      tone === 'inverted' ? 'text-white' : 'text-navy'
+    } ${className}`}
   >
     {icon && <span className="inline-block w-8 h-8 text-primary">{icon}</span>}
     <span>{children}</span>

@@ -1,37 +1,39 @@
 import React from 'react';
 import { Site } from '../types/site';
-import { SectionHeading } from '../components/ui/SectionHeading';
+import { Container } from '../components/layout/Container';
+import { Section } from '../components/layout/Section';
+import { Eyebrow } from '../components/ui/Eyebrow';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const Process: React.FC<{ site: Site }> = ({ site }) => {
   const { elementRef, isVisible } = useScrollAnimation();
 
   return (
-    <section
+    <Section
       id="process"
-      ref={elementRef}
-      className={`py-16 bg-surface dark:bg-slate-900 transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      tone="white"
+      ref={elementRef as React.RefObject<HTMLElement>}
+      className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
     >
-      <div className="max-w-5xl mx-auto px-4">
-        <SectionHeading>How It Works</SectionHeading>
-        <div className="flex flex-col md:flex-row gap-8">
+      <Container>
+        <div className="max-w-2xl mb-14">
+          <Eyebrow>How It Works</Eyebrow>
+          <h2 className="mt-4 text-display font-extrabold text-navy leading-tight">A Simple, Consistent Process</h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-10 md:gap-8">
           {site.process.map((step, i) => (
             <div
-              key={i}
-              className={`flex-1 bg-white dark:bg-slate-800 border border-border dark:border-slate-700 rounded-xl shadow-sm p-8 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+              key={step.step}
+              className={`md:pl-8 ${i > 0 ? 'md:border-l md:border-border' : ''} pt-6 md:pt-0 border-t md:border-t-0 border-border`}
             >
-              <div className="text-4xl font-bold text-primary dark:text-accent mb-3">{step.step}</div>
-              <div className="font-semibold text-lg text-text-primary dark:text-slate-100 mb-2">{step.title}</div>
-              <div className="text-text-secondary dark:text-slate-300 text-sm leading-relaxed">{step.description}</div>
+              <div className="text-5xl font-extrabold text-primary/25 mb-4">{String(step.step).padStart(2, '0')}</div>
+              <h3 className="text-h3 font-bold text-navy mb-2">{step.title}</h3>
+              <p className="text-sm md:text-base leading-relaxed text-text-secondary">{step.description}</p>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };

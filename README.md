@@ -5,10 +5,9 @@ A conversion-first, JSON-driven one-page resume/portfolio for Jimmy C. Ornido, b
 ---
 
 ## 🚀 Features
-- **Conversion-first**: Lead capture form, clear offer, credibility metrics
-- **JSON-driven**: All resume and site content in `/src/data/*.json`
-- **Modern UI**: Clean, clinical, accessible, dark mode
-- **No hardcoded resume content**: All data loaded from JSON
+- **Conversion-first**: Lead capture form, clear offer, credibility metrics, workflow portfolio
+- **JSON-driven**: Editable resume/site content, fetched at runtime from `/public/*.json`
+- **Modern UI**: Editorial blue/navy healthcare brand, strong typography, accessible
 - **Production-ready**: Error boundaries, validation, responsive, accessible
 - **Deploys to GitHub Pages**: Uses `gh-pages` script
 
@@ -75,17 +74,23 @@ src/
 
 ## 📝 Content Management
 - **Edit all resume/site content in:**
-  - `src/data/resume.json`
-  - `src/data/site.json`
+  - `public/resume.json`
+  - `public/site.json`
+  - (fetched at runtime — no rebuild needed for content-only changes in dev; still requires a redeploy on GitHub Pages)
+- **Workflow portfolio & training certificates:**
+  - `src/data/workflows.ts`
+  - `src/data/training.ts`
 - **Types and validation:**
   - `src/types/`
-  - Uses [Zod](https://zod.dev/) for runtime validation
+  - Uses [Zod](https://zod.dev/) for runtime validation of `resume.json`/`site.json`
 
 ---
 
-## 🌓 Dark Mode
-- Toggle in bottom-right corner
-- Remembers preference (localStorage)
+## 🖼️ Images
+
+- Run `node scripts/optimize-images.mjs` after adding new images to `src/assets/img/` to resize and convert them to WebP.
+- Certificate/portrait originals are kept alongside their optimized `.webp` versions.
+- Raw workflow screenshots that were never sanitized for public use are excluded via `.gitignore` — see the privacy review notes in project history before re-adding any screenshot-based visuals.
 
 ---
 

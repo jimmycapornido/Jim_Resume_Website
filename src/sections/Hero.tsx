@@ -1,112 +1,61 @@
 import React from 'react';
-import JimProfile from '../assets/img/Jim-Profile.jpg';
+import heroPortrait from '../assets/img/jim-profile.webp';
 import { Site } from '../types/site';
-import { Resume } from '../types/resume';
 import { Button } from '../components/ui/Button';
-import { Badge } from '../components/ui/Badge';
+import { Metric } from '../components/ui/Metric';
+import { Container } from '../components/layout/Container';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-export const Hero: React.FC<{ site: Site; resume: Resume }> = ({ site, resume }) => {
+export const Hero: React.FC<{ site: Site }> = ({ site }) => {
   const { elementRef, isVisible } = useScrollAnimation();
 
   return (
     <section
       id="hero"
-      ref={elementRef}
-      className={`py-16 md:py-24 bg-clinical dark:bg-slate-900 border-b border-border dark:border-slate-800 transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      ref={elementRef as React.RefObject<HTMLElement>}
+      className="relative overflow-hidden bg-navy-deep min-h-[92vh] flex items-center"
     >
-      <div className="flex flex-col items-center max-w-5xl gap-12 px-4 mx-auto md:flex-row">
-        {/* LEFT */}
-        <div className="flex-1">
-          <h1 className="mb-3 font-extrabold tracking-tight text-h1 text-text-primary dark:text-slate-50">
-            Medical Virtual Assistant | EHR &amp; PCE Documentation Specialist
-          </h1>
+      <div className="absolute inset-0">
+        <img
+          src={heroPortrait}
+          alt=""
+          aria-hidden="true"
+          className="absolute right-0 top-0 h-full w-full md:w-2/3 object-cover object-[center_20%] opacity-40 md:opacity-70"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 md:via-navy-deep/70 to-navy-deep/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent" />
+      </div>
 
-          <p className="mb-6 text-base leading-relaxed text-text-secondary dark:text-slate-300">
-            Structured, Audit-Ready Documentation for U.S. Healthcare Providers
+      <Container className={`relative py-28 md:py-0 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className="max-w-2xl">
+          <span className="block text-eyebrow font-semibold uppercase text-accent">{site.hero.eyebrow}</span>
+          <h1 className="mt-5 text-hero font-extrabold tracking-tight text-white">{site.hero.headline}</h1>
+          <p className="mt-6 text-base md:text-lg leading-relaxed text-clinical-light/90 max-w-xl">
+            {site.hero.subcopy}
           </p>
 
-          <div className="flex flex-col gap-4 mb-6 sm:flex-row">
+          <div className="mt-9 flex flex-col sm:flex-row gap-4">
             <Button
-              variant="primary"
-              aria-label="Scroll to contact section"
+              variant="secondary"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              {site.ctaHeroPrimary}
+              {site.hero.ctaPrimary}
             </Button>
-
-            <a
-              href={`mailto:${resume.email}`}
-              className="px-4 py-2 transition-colors border rounded-md border-border text-text-primary hover:bg-surface dark:text-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
-              aria-label={`Send email to ${resume.email}`}
+            <Button
+              variant="outline-inverted"
+              onClick={() => document.getElementById('workflows')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              {site.ctaHeroSecondary}
-            </a>
+              {site.hero.ctaSecondary}
+            </Button>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 text-xs text-text-muted dark:text-slate-400">
-            {site.trustStrip.map((t) => (
-              <span
-                key={t}
-                className="inline-block px-2.5 py-1 bg-surface dark:bg-slate-800 rounded border border-border dark:border-slate-700 text-xs font-medium"
-              >
-                {t}
-              </span>
+          <div className="mt-14 grid grid-cols-3 gap-6 max-w-lg border-t border-white/15 pt-8">
+            {site.hero.proofPoints.map((p) => (
+              <Metric key={p.label} value={p.value} label={p.label} tone="inverted" />
             ))}
           </div>
         </div>
-
-        {/* RIGHT */}
-        <div className="flex flex-col items-center flex-1 w-full max-w-xs p-8 bg-white border shadow-sm dark:bg-slate-800 rounded-xl border-border dark:border-slate-700">
-          <img
-            src={JimProfile}
-            alt="Profile photo of Jimmy C. Ornido, Medical Virtual Assistant"
-            className="object-cover mb-4 border border-gray-200 rounded-full w-28 h-28 dark:border-slate-700 bg-surface dark:bg-slate-700"
-            aria-label="Profile photo of Jimmy C. Ornido"
-          />
-
-          <div className="mb-1 text-lg font-semibold text-center text-text-primary dark:text-slate-100">
-            {site.profileCard.title}
-          </div>
-
-          <div className="w-full pb-5 mb-5 text-sm text-center border-b text-text-secondary dark:text-slate-300 border-border dark:border-slate-700">
-            {resume.location}
-          </div>
-
-          {/* Contact Info - Separated Rows with Icons */}
-          <div className="w-full mb-5 space-y-3">
-            <a
-              href={`tel:${resume.phone}`}
-              className="flex items-center gap-3 text-sm font-medium transition text-text-primary dark:text-slate-100 hover:text-primary dark:hover:text-accent"
-              aria-label={`Call ${resume.phone}`}
-            >
-              <span className="flex-shrink-0 text-lg" aria-hidden="true">📞</span>
-              <span className="break-all">{resume.phone}</span>
-            </a>
-
-            <a
-              href={`mailto:${resume.email}`}
-              className="flex items-center gap-3 text-sm font-medium transition text-text-primary dark:text-slate-100 hover:text-primary dark:hover:text-accent"
-              aria-label={`Send email to ${resume.email}`}
-            >
-              <span className="flex-shrink-0 text-lg" aria-hidden="true">✉️</span>
-              <span className="text-xs break-all">{resume.email}</span>
-            </a>
-          </div>
-
-          <div className="flex flex-wrap gap-1.5 mb-4 justify-center">
-            {site.profileCard.metrics.map((m, i) => (
-              <Badge key={i}>{m.label}</Badge>
-            ))}
-          </div>
-
-          <div className="text-xs text-center text-text-muted dark:text-slate-400">
-            {site.profileCard.availability}
-          </div>
-        </div>
-      </div>
+      </Container>
     </section>
   );
 };

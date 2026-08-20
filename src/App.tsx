@@ -4,16 +4,18 @@ import { useResumeData } from './hooks/useResumeData';
 import { useSiteData } from './hooks/useSiteData';
 import { Loader } from './components/ui/Loader';
 import { ErrorPanel } from './components/ui/ErrorPanel';
-import { ThemeProvider } from './components/ui/ThemeProvider';
 import { Nav } from './sections/Nav';
 import { Hero } from './sections/Hero';
-import { About } from './sections/About'; // ✅ Added
+import { Problem } from './sections/Problem';
 import { Services } from './sections/Services';
-import { Process } from './sections/Process';
-import { Proof } from './sections/Proof';
+import { Results } from './sections/Results';
+import { WorkflowPortfolio } from './sections/WorkflowPortfolio';
+import { About } from './sections/About';
 import { Experience } from './sections/Experience';
-import { SkillsTools } from './sections/SkillsTools';
-import { Certifications } from './sections/Certifications';
+import { Process } from './sections/Process';
+import { Tools } from './sections/Tools';
+import { Training } from './sections/Training';
+import { Testimonial } from './sections/Testimonial';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
 
@@ -28,21 +30,22 @@ const App: React.FC = () => {
 
   return (
     <ErrorBoundary>
-      <ThemeProvider>
-        <Nav site={site} />
-        <main>
-          <Hero site={site} resume={resume} />
-          <About /> {/* ✅ Inserted here */}
-          <Services site={site} />
-          <Process site={site} />
-          <Proof site={site} />
-          <Experience resume={resume} />
-          <SkillsTools resume={resume} site={site} />
-          <Certifications resume={resume} />
-          <Contact site={site} resume={resume} />
-        </main>
-        <Footer site={site} />
-      </ThemeProvider>
+      <Nav site={site} />
+      <main>
+        <Hero site={site} />
+        <Problem site={site} />
+        <Services site={site} />
+        <Results site={site} />
+        <WorkflowPortfolio />
+        <About site={site} />
+        <Experience resume={resume} />
+        <Process site={site} />
+        <Tools resume={resume} site={site} />
+        <Training />
+        <Testimonial site={site} />
+        <Contact site={site} resume={resume} />
+      </main>
+      <Footer site={site} />
     </ErrorBoundary>
   );
 };

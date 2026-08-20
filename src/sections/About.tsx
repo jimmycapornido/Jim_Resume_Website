@@ -1,39 +1,55 @@
 import React from 'react';
+import portrait from '../assets/img/jim-profile.webp';
+import { Site } from '../types/site';
+import { Container } from '../components/layout/Container';
+import { Section } from '../components/layout/Section';
+import { Eyebrow } from '../components/ui/Eyebrow';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { SectionHeading } from '../components/ui/SectionHeading';
 
-export const About: React.FC = () => {
+export const About: React.FC<{ site: Site }> = ({ site }) => {
   const { elementRef, isVisible } = useScrollAnimation();
+  const { whyWorkWithJimmy } = site;
 
   return (
-    <section
+    <Section
       id="about"
-      ref={elementRef}
-      className={`py-16 bg-white dark:bg-slate-900 border-b border-border dark:border-slate-800 transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      tone="navy-deep"
+      ref={elementRef as React.RefObject<HTMLElement>}
+      className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
     >
-      <div className="max-w-5xl mx-auto px-4">
-        <SectionHeading>About</SectionHeading>
+      <Container>
+        <div className="grid md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-12 md:gap-16 items-center">
+          <div className="rounded-2xl overflow-hidden">
+            <img
+              src={portrait}
+              alt="Jimmy Ornido, Medical Virtual Assistant"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
 
-        <h2 className="mt-4 text-2xl md:text-3xl font-extrabold text-text-primary dark:text-slate-100">
-          Clinically-Trained Medical Virtual Assistant Focused on Documentation Accuracy
-        </h2>
+          <div>
+            <Eyebrow tone="inverted">{whyWorkWithJimmy.eyebrow}</Eyebrow>
+            <h2 className="mt-4 text-display font-extrabold text-white leading-tight">
+              {whyWorkWithJimmy.headline}
+            </h2>
+            <div className="mt-6 space-y-4 text-base md:text-lg leading-relaxed text-clinical-light/90">
+              {whyWorkWithJimmy.body.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
 
-        <div className="mt-6 space-y-4 max-w-3xl text-sm leading-relaxed text-text-secondary dark:text-slate-300">
-          <p>
-            I combine hospital-based clinical experience with hands-on support in U.S. healthcare documentation workflows. My focus is structured Electronic Health Record (EHR) management, precise Patient Care Encounter (PCE) documentation, and compliance-conscious record handling.
-          </p>
-
-          <p>
-            Having supported high-volume documentation environments, I understand the importance of chart completeness, workflow consistency, and audit-readiness. I help reduce provider documentation burden by ensuring every encounter is organized, accurate, and professionally structured.
-          </p>
-
-          <p className="font-medium text-text-primary dark:text-slate-100">
-            Documentation is not just data entry — it is clinical communication.
-          </p>
+            <ul className="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-4 border-t border-white/15 pt-8">
+              {whyWorkWithJimmy.points.map((point) => (
+                <li key={point} className="flex gap-3 text-sm text-clinical-light/90">
+                  <span className="text-accent font-bold mt-0.5">✓</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
