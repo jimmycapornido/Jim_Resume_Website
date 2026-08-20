@@ -19,7 +19,6 @@ export const Contact: React.FC<{ site: Site; resume: Resume }> = ({ site, resume
     phone: '',
     service: '',
     message: '',
-    contactMethod: 'email',
     consent: false,
   });
   const [errors, setErrors] = useState<{ [k: string]: string }>({});
@@ -52,7 +51,7 @@ export const Contact: React.FC<{ site: Site; resume: Resume }> = ({ site, resume
     if (Object.keys(eObj).length > 0) return;
     const subject = encodeURIComponent(`Client Inquiry: ${form.service}`);
     const body = encodeURIComponent(
-      `Name: ${form.name}\nOrganization: ${form.company}\nEmail: ${form.email}\nPhone: ${form.phone}\nTopic: ${form.service}\nPreferred Contact: ${form.contactMethod}\nMessage:\n${form.message}`
+      `Name: ${form.name}\nOrganization: ${form.company}\nEmail: ${form.email}\nPhone: ${form.phone}\nTopic: ${form.service}\nMessage:\n${form.message}`
     );
     const mailto = `mailto:${resume.email}?subject=${subject}&body=${body}`;
     try {
@@ -69,17 +68,17 @@ export const Contact: React.FC<{ site: Site; resume: Resume }> = ({ site, resume
   };
 
   return (
-    <Section id="contact" tone="light">
+    <Section id="contact" tone="light" className="py-14 md:py-20">
       <Container>
-        <div className="grid md:grid-cols-2 gap-14">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-14">
           <div>
             <Eyebrow>Contact</Eyebrow>
-            <h2 className="mt-4 text-display font-extrabold text-navy leading-tight">{site.contact.headline}</h2>
+            <h2 className="mt-3 text-h1 font-extrabold text-navy leading-tight">{site.contact.headline}</h2>
             {site.contact.subcopy && (
-              <p className="mt-5 text-base md:text-lg text-text-secondary leading-relaxed">{site.contact.subcopy}</p>
+              <p className="mt-4 text-base text-text-secondary leading-relaxed">{site.contact.subcopy}</p>
             )}
 
-            <div className="mt-8 space-y-2">
+            <div className="mt-6 space-y-1.5">
               <a href={`tel:${resume.phone}`} className="block text-lg font-semibold text-navy hover:text-primary transition">
                 {resume.phone}
               </a>
@@ -88,11 +87,11 @@ export const Contact: React.FC<{ site: Site; resume: Resume }> = ({ site, resume
               </a>
               <p className="text-sm text-text-secondary">{resume.location} · Remote availability</p>
             </div>
-            <Button variant="outline" type="button" className="mt-5" onClick={copyEmail}>
+            <Button variant="outline" type="button" className="mt-4" onClick={copyEmail}>
               Copy Email
             </Button>
 
-            <p className="mt-6 text-xs text-text-muted">{site.contact.responseSLA}</p>
+            <p className="mt-5 text-xs text-text-muted">{site.contact.responseSLA}</p>
             {success && <div className="mt-3 text-sm font-medium text-success">{success}</div>}
             {mailtoError && (
               <div className="mt-3 text-sm font-medium text-error">
@@ -102,30 +101,34 @@ export const Contact: React.FC<{ site: Site; resume: Resume }> = ({ site, resume
           </div>
 
           <form
-            className="bg-white border border-border rounded-2xl shadow-sm p-8 flex flex-col gap-5"
+            className="bg-white border border-border rounded-2xl shadow-sm p-5 md:p-6 flex flex-col gap-3.5"
             onSubmit={handleSubmit}
             noValidate
           >
             <div>
-              <label className="block text-sm font-medium text-navy mb-2">Full Name*</label>
+              <label className="block text-sm font-medium text-navy mb-1.5">Full Name*</label>
               <Input name="name" placeholder="Jane Smith" value={form.name} onChange={handleChange} aria-invalid={!!errors.name} />
               {errors.name && <span className="text-xs text-error mt-1 block">{errors.name}</span>}
             </div>
-            <div>
-              <label className="block text-sm font-medium text-navy mb-2">Organization / Practice</label>
-              <Input name="company" placeholder="Your Practice Name" value={form.company} onChange={handleChange} />
+
+            <div className="grid sm:grid-cols-2 gap-3.5">
+              <div>
+                <label className="block text-sm font-medium text-navy mb-1.5">Organization / Practice</label>
+                <Input name="company" placeholder="Your Practice Name" value={form.company} onChange={handleChange} />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-navy mb-1.5">Phone</label>
+                <Input name="phone" placeholder="+1 (555) 123-4567" value={form.phone} onChange={handleChange} />
+              </div>
             </div>
+
             <div>
-              <label className="block text-sm font-medium text-navy mb-2">Work Email*</label>
+              <label className="block text-sm font-medium text-navy mb-1.5">Work Email*</label>
               <Input name="email" placeholder="you@clinic.com" value={form.email} onChange={handleChange} aria-invalid={!!errors.email} />
               {errors.email && <span className="text-xs text-error mt-1 block">{errors.email}</span>}
             </div>
             <div>
-              <label className="block text-sm font-medium text-navy mb-2">Phone</label>
-              <Input name="phone" placeholder="+1 (555) 123-4567" value={form.phone} onChange={handleChange} />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-navy mb-2">What do you need help with?*</label>
+              <label className="block text-sm font-medium text-navy mb-1.5">What do you need help with?*</label>
               <Select name="service" value={form.service} onChange={handleChange} aria-invalid={!!errors.service}>
                 <option value="">Select a topic...</option>
                 {site.services.map((s) => (
@@ -137,7 +140,7 @@ export const Contact: React.FC<{ site: Site; resume: Resume }> = ({ site, resume
               {errors.service && <span className="text-xs text-error mt-1 block">{errors.service}</span>}
             </div>
             <div>
-              <label className="block text-sm font-medium text-navy mb-2">Message*</label>
+              <label className="block text-sm font-medium text-navy mb-1.5">Message*</label>
               <Textarea
                 name="message"
                 placeholder="Tell me about your team's workflow..."
@@ -145,30 +148,21 @@ export const Contact: React.FC<{ site: Site; resume: Resume }> = ({ site, resume
                 onChange={handleChange}
                 minLength={MIN_MESSAGE_LENGTH}
                 aria-invalid={!!errors.message}
+                rows={3}
               />
               {errors.message && <span className="text-xs text-error mt-1 block">{errors.message}</span>}
             </div>
 
             {site.contact.privacyNotice && (
-              <p className="text-xs text-text-muted bg-clinical-ice border border-border rounded-lg px-4 py-3">
+              <p className="text-xs text-text-muted bg-clinical-ice border border-border rounded-lg px-3.5 py-2.5">
                 {site.contact.privacyNotice}
               </p>
             )}
 
-            <div className="bg-clinical-ice rounded-lg p-4">
-              <div className="flex gap-4 items-center mb-4">
-                <label className="flex items-center gap-2 text-sm text-navy">
-                  <input type="radio" name="contactMethod" value="email" checked={form.contactMethod === 'email'} onChange={handleChange} /> Email
-                </label>
-                <label className="flex items-center gap-2 text-sm text-navy">
-                  <input type="radio" name="contactMethod" value="phone" checked={form.contactMethod === 'phone'} onChange={handleChange} /> Phone
-                </label>
-              </div>
-              <label className="flex items-center gap-2 text-xs text-navy">
-                <input type="checkbox" name="consent" checked={form.consent} onChange={handleChange} /> {site.contact.consentText}
-              </label>
-              {errors.consent && <span className="text-xs text-error mt-2 block">{errors.consent}</span>}
-            </div>
+            <label className="flex items-start gap-2 text-xs text-navy">
+              <input type="checkbox" name="consent" checked={form.consent} onChange={handleChange} className="mt-0.5" /> {site.contact.consentText}
+            </label>
+            {errors.consent && <span className="text-xs text-error block">{errors.consent}</span>}
 
             <Button variant="primary" type="submit" className="w-full">
               Send Inquiry

@@ -6,8 +6,6 @@ import { Eyebrow } from '../components/ui/Eyebrow';
 import { WorkflowFeature } from '../components/portfolio/WorkflowFeature';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const ordered = [...workflows].sort((a, b) => Number(b.featured) - Number(a.featured));
-
 export const WorkflowPortfolio: React.FC = () => {
   const { elementRef, isVisible } = useScrollAnimation();
 
@@ -31,7 +29,7 @@ export const WorkflowPortfolio: React.FC = () => {
         </div>
 
         <div>
-          {ordered.map((item, i) => (
+          {workflows.map((item, i) => (
             <WorkflowFeature key={item.id} item={item} reverse={i % 2 === 1} />
           ))}
         </div>
