@@ -31,13 +31,21 @@ const VisualPanel: React.FC<{ item: WorkflowItem }> = ({ item }) => {
   }
 
   return (
-    <div className="w-full h-full min-h-[280px] md:min-h-[360px] rounded-2xl bg-navy p-8 md:p-10 flex flex-col justify-between">
+    <div className="relative w-full h-full min-h-[280px] md:min-h-[360px] rounded-2xl bg-navy overflow-hidden p-8 md:p-10 flex flex-col justify-between">
+      {item.bgImage && (
+        <>
+          <img src={item.bgImage} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-gradient-to-br from-navy-deep/95 via-navy/90 to-navy-deep/80" />
+        </>
+      )}
       {item.flowSteps ? (
-        <FlowDiagram steps={item.flowSteps} />
+        <div className="relative">
+          <FlowDiagram steps={item.flowSteps} />
+        </div>
       ) : (
         <>
-          <span className="text-white/30 text-7xl md:text-8xl font-extrabold leading-none">{item.number}</span>
-          <div className="mt-6">
+          <span className="relative text-white/30 text-7xl md:text-8xl font-extrabold leading-none">{item.number}</span>
+          <div className="relative mt-6">
             {item.tools.map((tool) => (
               <div key={tool} className="text-white font-semibold text-lg md:text-xl">
                 {tool}

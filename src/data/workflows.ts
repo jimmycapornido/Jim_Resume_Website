@@ -1,6 +1,11 @@
 import { WorkflowItem } from '../types/workflow';
 import toolChartSwap from '../assets/img/tool-chartswap.webp';
 import toolEclinicalWorks from '../assets/img/tool-eclinicalworks.webp';
+import bgWorkflow03 from '../assets/img/bg-workflow-03.webp';
+import bgWorkflow04 from '../assets/img/bg-workflow-04.webp';
+import bgWorkflow05 from '../assets/img/bg-workflow-05.webp';
+import bgWorkflow06 from '../assets/img/bg-workflow-06.webp';
+import bgWorkflow07 from '../assets/img/bg-workflow-07.webp';
 
 // Note on visuals: the raw screenshots behind this experience contain real patient
 // names, DOBs, addresses, and law-firm/requestor details that could not be reliably
@@ -69,6 +74,7 @@ export const workflows: WorkflowItem[] = [
       'One consistent process spanning both the EHR and the release platform',
       'Fewer handoff gaps between chart review and record release',
     ],
+    bgImage: bgWorkflow03,
     flowSteps: [
       'Request Received',
       'Patient Verified',
@@ -97,6 +103,7 @@ export const workflows: WorkflowItem[] = [
       'A single, shared view of where every request stands',
       'Consistent follow-through without relying on memory or email threads',
     ],
+    bgImage: bgWorkflow04,
     featured: true,
   },
   {
@@ -115,6 +122,7 @@ export const workflows: WorkflowItem[] = [
       'Clear, professional communication with requestors',
       'A documented trail for every completed request',
     ],
+    bgImage: bgWorkflow05,
     featured: false,
   },
   {
@@ -133,6 +141,7 @@ export const workflows: WorkflowItem[] = [
       'Consistent, well-organized estimate paperwork',
       'Administrative support that does not touch pricing or clinical decisions',
     ],
+    bgImage: bgWorkflow06,
     featured: false,
   },
   {
@@ -152,6 +161,7 @@ export const workflows: WorkflowItem[] = [
       'A final quality check before anything goes out the door',
       'Fewer follow-up requests caused by incomplete record sets',
     ],
+    bgImage: bgWorkflow07,
     featured: true,
   },
 ];
