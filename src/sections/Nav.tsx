@@ -20,7 +20,9 @@ export const Nav: React.FC<{ site: Site }> = ({ site }) => {
     };
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     setActiveHash(href);
     setOpen(false);
   };
@@ -34,7 +36,7 @@ export const Nav: React.FC<{ site: Site }> = ({ site }) => {
       }`}
     >
       <div className="flex items-center justify-between max-w-edit mx-auto px-4 md:px-6 py-2.5">
-        <a href="#hero" className="hover:opacity-80 transition" onClick={() => handleNavClick('#hero')}>
+        <a href="#hero" className="hover:opacity-80 transition" onClick={(e) => handleNavClick(e, '#hero')}>
           <img src={logo} alt={`${site.brand} – ${site.brandSecondary ?? 'Medical Virtual Assistant'}`} className="h-9 md:h-10 w-auto" />
         </a>
 
@@ -44,7 +46,7 @@ export const Nav: React.FC<{ site: Site }> = ({ site }) => {
               key={link.href}
               href={link.href}
               className="text-sm font-medium relative pb-1 text-text-primary hover:text-primary transition-colors"
-              onClick={() => handleNavClick(link.href)}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.label}
               {activeHash === link.href && (
@@ -74,7 +76,7 @@ export const Nav: React.FC<{ site: Site }> = ({ site }) => {
               key={link.href}
               href={link.href}
               className="block py-3 text-sm font-medium text-text-primary hover:text-primary transition"
-              onClick={() => handleNavClick(link.href)}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.label}
             </a>

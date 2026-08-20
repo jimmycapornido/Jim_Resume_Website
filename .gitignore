@@ -4,6 +4,12 @@ dist
 .DS_Store
 *.log
 
+# Playwright artifacts
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
 # Raw workflow screenshots that were never sanitized for publication (contain real
 # patient/requestor PHI - see engineering report). Do not remove these lines without
 # first re-reviewing the referenced files for exposed patient data.
