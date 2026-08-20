@@ -4,52 +4,52 @@
 	"phone": "0945-390-2911",
 	"email": "jimmy.cap.ornido@gmail.com",
 	"dateOfBirth": "1998-06-09",
-	"professionalSummary": "Healthcare professional with 2+ years hospital experience and 8+ months as a Medical Virtual Assistant. Skilled in EHR management, medical transcription, coding, and workflow optimization. Proficient in SharePoint, CharSwap, Salesforce, and other digital tools. Experienced in managing high volumes of sensitive patient records while maintaining HIPAA compliance. Known for accuracy, organization, and adaptability in clinical and administrative settings.",
+	"professionalSummary": "Healthcare professional with 2+ years of hospital experience and 8+ months as a Medical Virtual Assistant. Experienced in EHR administration in eClinicalWorks, medical-record request workflows in ChartSwap, medical transcription support, and healthcare workflow tracking. Comfortable managing high volumes of sensitive patient records with a confidentiality-conscious, audit-ready approach. Known for accuracy, organization, and adaptability in clinical and administrative settings.",
 	"coreSkills": [
-		"EHR management & Patient Care Encounter documentation",
-		"Medical transcription & coding",
-		"Organizing, bundling, and managing medical records",
-		"HIPAA compliance & audit-ready documentation",
-		"Workflow optimization with SharePoint & CharSwap",
+		"EHR administration & Patient Care Encounter documentation",
+		"Medical-record request tracking & release workflows (ChartSwap)",
+		"Medical transcription support & documentation review",
+		"Confidentiality-conscious, audit-ready documentation practices",
+		"Healthcare workflow tracking (Microsoft Lists & SharePoint)",
 		"Time management, prioritization, and accuracy",
-		"Coordination with healthcare providers",
-		"Attention to detail & consistency"
+		"Coordination with healthcare providers and requestors",
+		"Attention to detail & consistency across high-volume work"
 	],
 	"technicalTools": [
-		"ClinicalWorks (EHR)",
+		"eClinicalWorks (eCW)",
+		"ChartSwap",
 		"Salesforce",
-		"SharePoint",
-		"CharSwap",
+		"Microsoft Lists & SharePoint",
+		"Microsoft Outlook",
 		"Google Sheets & Docs",
 		"Microsoft Word & Excel",
-		"PDF tools",
-		"Secure email/document transmission"
+		"PDF tools"
 	],
 	"experience": [
 		{
 			"role": "Medical Virtual Assistant (Part-Time)",
-			"company": "Momentum Spine",
+			"company": "Momentum Spine & Joint",
 			"date": "2024 – Present",
 			"achievements": [
-				"Logged & managed 500+ patient records/month with 100% accuracy",
-				"Reduced document processing time by 20% using SharePoint & CharSwap",
-				"Maintained audit-ready EHR documentation with zero compliance issues over 12 months",
-				"Generated accurate Patient Care Encounters (PCE)",
-				"Reviewed & verified medical records for accuracy",
+				"Logged and managed 500+ patient records per month with consistent accuracy",
+				"Reduced document processing time by 20% using ChartSwap and Microsoft Lists tracking",
+				"Maintained audit-ready EHR documentation with zero documented compliance issues over 12 months",
+				"Prepared accurate Patient Care Encounter documentation in eClinicalWorks",
+				"Reviewed and verified medical records for accuracy before release",
 				"Organized and managed medical documentation for efficient retrieval",
-				"Tracked workflows, tasks, and records with Salesforce, Google Sheets & SharePoint"
+				"Tracked record requests and workflow status using Salesforce, Google Sheets, and Microsoft Lists"
 			]
 		},
 		{
 			"role": "Nursing Assistant",
-			"company": "Cebu Doctors’ University Hospital",
+			"company": "Cebu Doctors' University Hospital",
 			"date": "Oct 2022 – Mar 2025",
 			"achievements": [
-				"Assisted 20+ patients daily with direct care, mobility, hygiene, & daily activities",
-				"Maintained 100% accuracy in EHR updates over 2+ years",
-				"Monitored & documented vital signs; managed patient drains & I&O tracking",
-				"Supported nursing team in reducing charting errors by 15%",
-				"Maintained clean, safe, & organized patient care areas"
+				"Assisted 20+ patients daily with direct care, mobility, hygiene, and daily activities",
+				"Maintained consistent accuracy in EHR updates over 2+ years",
+				"Monitored and documented vital signs; managed patient drains and I&O tracking",
+				"Supported the nursing team in reducing charting errors by 15%",
+				"Maintained clean, safe, and organized patient care areas"
 			]
 		}
 	],
@@ -67,31 +67,36 @@
 	],
 	"certifications": [
 		{
-			"title": "Ambulance Training",
-			"issuer": "Cebu Doctors’ University Hospital",
-			"date": "Dec 2023"
-		},
-		{
-			"title": "Radiation Safety Refresher Course",
-			"issuer": "Cebu Doctors’ University Hospital",
-			"date": "Sep 2023"
-		},
-		{
-			"title": "Medical Transcription Training",
-			"issuer": "Clair Voyance",
+			"title": "Medical Virtual Assistant Training",
+			"issuer": "ClairVoyance",
 			"date": "Jan 2026",
 			"code": "CVMV-VA105855"
 		},
 		{
 			"title": "Medical Coding Training",
-			"issuer": "Clair Voyance",
+			"issuer": "ClairVoyance",
 			"date": "Jan 2026"
 		},
 		{
-			"title": "Medical Virtual Assistant Training",
-			"issuer": "Clair Voyance",
+			"title": "Medical Transcription Training",
+			"issuer": "ClairVoyance",
 			"date": "Jan 2026",
 			"code": "CVMV-VA105855"
+		},
+		{
+			"title": "Ambulance Training",
+			"issuer": "Cebu Doctors' University Hospital",
+			"date": "Dec 2023"
+		},
+		{
+			"title": "Radiation Safety Refresher Course",
+			"issuer": "Cebu Doctors' University Hospital",
+			"date": "Sep 2023"
+		},
+		{
+			"title": "Basic First Aid & Basic Life Support Training",
+			"issuer": "Basic Lifesaving Solutions Training Center (ECSI-Accredited Training Center)",
+			"date": "Feb 2022"
 		}
 	]
 }

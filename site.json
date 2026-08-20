@@ -1,102 +1,148 @@
 {
-	"brand": "Jimmy Ornido – Medical VA",
+	"brand": "Jimmy Ornido",
+	"brandSecondary": "Medical Virtual Assistant",
 	"navLinks": [
-		{ "label": "Overview", "href": "#hero" },
 		{ "label": "Services", "href": "#services" },
-		{ "label": "Proof", "href": "#proof" },
-		{ "label": "Experience", "href": "#experience" },
-		{ "label": "Certifications", "href": "#certifications" },
+		{ "label": "Workflows", "href": "#workflows" },
+		{ "label": "Results", "href": "#results" },
+		{ "label": "About", "href": "#about" },
+		{ "label": "Training", "href": "#training" },
 		{ "label": "Contact", "href": "#contact" }
 	],
-	"ctaNav": "Hire Me",
-	"ctaHeroPrimary": "Request a Call",
-	"ctaHeroSecondary": "Email Me",
-	"trustStrip": ["ClinicalWorks", "SharePoint", "Salesforce", "Secure Transmission", "HIPAA Compliant"],
-	"profileCard": {
-		"title": "Medical VA | EHR & Records",
-		"availability": "Part-time / Remote",
-		"metrics": [
-			{ "label": "500+ records/month" },
-			{ "label": "100% accuracy target" },
-			{ "label": "0 compliance issues (12 months)" },
-			{ "label": "20% faster processing" }
+	"ctaNav": "Let's Talk",
+	"hero": {
+		"eyebrow": "Medical Virtual Assistant for Healthcare Teams",
+		"headline": "Reliable Medical Documentation Support That Keeps Your Workflow Moving.",
+		"subcopy": "I support healthcare teams with EHR administration, medical-record request workflows, documentation, and healthcare workflow tracking — so charts stay organized and requests keep moving without pulling your clinical staff off patient care.",
+		"ctaPrimary": "Let's Discuss Your Workflow",
+		"ctaSecondary": "See My Work",
+		"proofPoints": [
+			{ "value": "500+", "label": "Patient records managed per month" },
+			{ "value": "20%", "label": "Faster document processing" },
+			{ "value": "2+", "label": "Years of hospital-based healthcare experience" }
 		]
 	},
+	"trustStrip": ["eClinicalWorks", "ChartSwap", "Microsoft Lists", "Salesforce", "Confidentiality-Conscious Documentation"],
+	"problem": {
+		"eyebrow": "The Administrative Burden",
+		"headline": "Is documentation pulling your team away from patient care?",
+		"painPoints": [
+			"Medical-record requests keep accumulating faster than they can be reviewed.",
+			"Staff spend valuable time navigating charts, portals, and request queues.",
+			"Legal and insurance record requests require careful, consistent tracking.",
+			"Records need to be organized and verified before they can be released.",
+			"Scheduling, documentation, and follow-up all compete for the same hours.",
+			"Routine EHR work can consume time your clinical staff need elsewhere."
+		],
+		"transition": "That's where reliable, remote healthcare administrative support can help.",
+		"cta": "Discuss Your Workflow"
+	},
+	"servicesIntro": "Support organized around the administrative workflows that take time away from patient care — not a generic task list.",
 	"services": [
 		{
-			"title": "EHR & PCE Documentation",
-			"description": "Accurate entry and management of patient care encounters in EHR systems.",
-			"outcomes": ["Audit-ready records", "Reduced charting errors"]
+			"title": "EHR & Patient Record Support",
+			"platform": "eClinicalWorks (eCW)",
+			"description": "Chart review, patient-information updates, encounter documentation, and medical-record organization inside eClinicalWorks.",
+			"outcomes": ["Organized, audit-ready charts", "Fewer documentation gaps"]
 		},
 		{
-			"title": "Medical Records Organization & Bundling",
-			"description": "Systematic organization and bundling of medical records for efficient retrieval.",
-			"outcomes": ["Faster access", "Improved compliance"]
+			"title": "Medical Records & Release Workflows",
+			"platform": "ChartSwap",
+			"description": "Tracking medical-record requests from intake through authorized fulfillment — patient verification, service-date checks, and document organization.",
+			"outcomes": ["Structured, consistent request tracking", "Less administrative backlog"]
 		},
 		{
-			"title": "Medical Transcription Support",
-			"description": "Assist with transcription of medical notes and reports.",
-			"outcomes": ["Accurate documentation", "Time savings"]
+			"title": "Medical Documentation Support",
+			"platform": "Transcription & structured entry",
+			"description": "Transcription support, documentation review, and structured data entry for patient records and reports.",
+			"outcomes": ["Accurate, consistent documentation", "Faster turnaround on records"]
 		},
 		{
-			"title": "Coding Support (basic/assistive)",
-			"description": "Support for basic medical coding and documentation.",
-			"outcomes": ["Fewer coding errors", "Faster billing"]
+			"title": "Procedure Cost Estimate Preparation",
+			"platform": "Administrative support",
+			"description": "Verifying patient and procedure information and preparing procedure cost estimate documentation for administrative review — not clinical or pricing decisions.",
+			"outcomes": ["Consistent estimate documentation", "Fewer administrative errors"]
 		},
 		{
-			"title": "Workflow Tracking (Salesforce/Sheets/SharePoint)",
-			"description": "Track and update workflows using digital tools.",
-			"outcomes": ["Better task visibility", "On-time completion"]
+			"title": "Healthcare Workflow Tracking",
+			"platform": "Microsoft Lists / SharePoint / Salesforce",
+			"description": "Logging and tracking requests, encounters, and record status across shared tracking tools so nothing falls through.",
+			"outcomes": ["Better task visibility", "On-time follow-up"]
 		},
 		{
-			"title": "Audit-Ready Compliance Documentation",
-			"description": "Maintain documentation to meet compliance and audit standards.",
-			"outcomes": ["Zero compliance issues", "Peace of mind"]
+			"title": "Coding-Related Administrative Support",
+			"platform": "Foundational coding training",
+			"description": "Documentation review and administrative support informed by foundational medical coding training — not certified professional coding.",
+			"outcomes": ["More consistent documentation", "Fewer downstream billing questions"]
 		}
 	],
 	"testimonial": {
-		"quote": "Jimmy has been a dependable part of our documentation workflow. He handles Patient Care Encounters and medical records with a high level of accuracy and organization. His attention to detail helps us maintain clean and audit-ready charts.",
+		"quote": "Jimmy has been a dependable part of our documentation workflow. He handles Patient Care Encounter documentation and medical records with a high level of accuracy and organization. His attention to detail helps us maintain clean, audit-ready charts.",
 		"author": "Clinic Documentation Team",
-		"imagePath": "/Jim_Resume_Website/testimonial-photo.jpg"
+		"imagePath": "/Jim_Resume_Website/testimonial-photo.webp"
 	},
 	"companies": [
 		{ "name": "Cebu Doctors' University Hospital", "logoPath": "/Jim_Resume_Website/logo-cebu.jpg" },
 		{ "name": "Momentum Spine & Joint", "logoPath": "/Jim_Resume_Website/logo-momentum.jpg" }
 	],
+	"whyWorkWithJimmy": {
+		"eyebrow": "Why Work With Jimmy",
+		"headline": "Healthcare experience behind the administrative work.",
+		"body": [
+			"Before supporting healthcare teams remotely, I spent over two years in direct hospital patient care — time that shaped how I think about charts, documentation, and the people behind every record.",
+			"That clinical foundation carries into the administrative work I do now: I understand why a service date matters, why a chart needs to be complete before a request is released, and why consistency in tracking protects everyone downstream."
+		],
+		"points": [
+			"2+ years of hospital-based patient care experience",
+			"Hands-on experience across EHR, medical-record release, and workflow-tracking systems",
+			"Comfortable working within established SOPs and confidentiality expectations",
+			"Organized, detail-focused approach to high-volume documentation"
+		]
+	},
 	"process": [
 		{
 			"step": 1,
-			"title": "Intake",
-			"description": "Tools, access, and SOP setup"
+			"title": "Understand Your Workflow",
+			"description": "Review your systems, priorities, access requirements, and SOPs before any work begins."
 		},
 		{
 			"step": 2,
-			"title": "Daily Execution",
-			"description": "Records processed, logs updated"
+			"title": "Execute Consistently",
+			"description": "Process documentation, records, and administrative workflows according to your established procedures."
 		},
 		{
 			"step": 3,
-			"title": "QA + Reporting",
-			"description": "Accuracy checks, audit readiness"
+			"title": "Review & Report",
+			"description": "Run quality checks, maintain status visibility, and communicate progress clearly."
 		}
 	],
 	"proofMetrics": [
-		{ "label": "500+ patient records/month with accuracy" },
-		{ "label": "20% reduced processing time" },
-		{ "label": "Zero compliance issues over 12 months" },
-		{ "label": "Reduced charting errors by 15% (hospital role)" },
-		{ "label": "20+ patients/day assisted (hospital role)" }
+		{ "value": "500+", "label": "Patient records managed per month" },
+		{ "value": "20%", "label": "Faster document processing" },
+		{ "value": "0", "label": "Documented compliance issues / 12 months" },
+		{ "value": "15%", "label": "Reduction in charting errors (hospital role)" },
+		{ "value": "20+", "label": "Patients assisted daily (hospital role)" },
+		{ "value": "2+", "label": "Years of hospital-based healthcare experience" }
+	],
+	"toolsGroups": [
+		{ "label": "EHR", "tools": ["eClinicalWorks"] },
+		{ "label": "Records", "tools": ["ChartSwap"] },
+		{ "label": "Workflow Tracking", "tools": ["Microsoft Lists", "SharePoint", "Salesforce"] },
+		{ "label": "Communication", "tools": ["Microsoft Outlook"] },
+		{ "label": "Documents", "tools": ["Microsoft Word", "Excel", "Google Sheets & Docs", "PDF tools"] }
 	],
 	"skillsLabel": "Core Skills",
-	"toolsLabel": "Technical Tools",
+	"toolsLabel": "Tools & Platforms",
 	"contact": {
-		"headline": "Tell me what you need help with.",
+		"headline": "Need reliable support for your healthcare documentation workflow?",
+		"subcopy": "Tell me which systems and administrative workflows your team needs help with, and we can discuss where I can support you.",
+		"privacyNotice": "Please do not submit patient information, medical records, or protected health information through this form.",
 		"responseSLA": "Replies within 24 hours",
 		"consentText": "I agree to be contacted"
 	},
 	"footer": {
 		"copyright": "Jimmy C. Ornido – Medical Virtual Assistant",
-		"role": "Medical VA",
+		"role": "Medical Virtual Assistant",
 		"year": 2026,
 		"backToTop": "Back to top"
 	}
